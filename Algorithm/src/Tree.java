@@ -1,4 +1,8 @@
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class Tree {
 	
 	TreeNode root=null;
@@ -257,15 +261,59 @@ public class Tree {
     		  
     	  }
     	  
-    	 
-    	  
-    	  
-    	
-    	  
     	 return Replacement;
     	  
       }
       
+	public void wideTraversal()
+	{
+		TreeNode head=root;
+    Queue<TreeNode> queue =new LinkedList<TreeNode>();
+    
+      queue.add(head);
+    while(!queue.isEmpty())
+    {
+    	TreeNode node=queue.peek();
+    	if(node.left!=null)
+    	queue.add(node.left);
+    	if(node.right!=null)
+    	queue.add(node.right);
+    	System.out.println(queue.remove().val);
+    }
+	}
 	
-	
+	public TreeNode wideInsert(int val)
+	{
+		if(root==null)
+		{
+			return root=new TreeNode(val);
+		}
+    Queue<TreeNode> queue =new LinkedList<TreeNode>();
+    
+      queue.add(root);
+    while(true)
+    {
+    	TreeNode node=queue.peek();
+    	if(node.left==null)
+    	{
+    	 node.left=new TreeNode(val);
+    	 return root;
+    	}
+    	else
+    	{
+    		queue.add(node.left);
+    	}
+    	if(node.right==null)
+    	{
+    		 node.right=new TreeNode(val);
+    		 return root;
+    	}
+    	else {
+    	queue.add(node.right);
+    	}
+    	
+    	queue.remove();
+    }
+	}
+	 
 }

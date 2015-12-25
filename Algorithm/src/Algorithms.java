@@ -7,16 +7,24 @@ public class Algorithms {
 	
 	public static void main(String [] args)
 	{
-//		Tree obj= new Tree();
+		Tree obj= new Tree();
 //		IntegerCoding code=new IntegerCoding();
 //		LocalExtrema localextrema= new LocalExtrema();
-	ListOfNodes l1= new ListOfNodes();
-	ListOfNodes l2= new ListOfNodes();
-//		/*obj.InsertNode(10);
-//		obj.InsertNode(5);
-//		obj.InsertNode(3);
-//		obj.InsertNode(25);
-//		obj.InsertNode(11); */
+//	ListOfNodes l1= new ListOfNodes();
+//	ListOfNodes l2= new ListOfNodes();
+		obj.InsertNode(10);
+		obj.InsertNode(5);
+		obj.InsertNode(3);
+		obj.InsertNode(25);
+		obj.InsertNode(11); 
+		
+		obj.wideInsert(10);
+		obj.wideInsert(5);
+		obj.wideInsert(3);
+		obj.wideInsert(25);
+		obj.wideInsert(11);
+		
+		obj.wideTraversal();
 //		
 //		/*obj.InsertNode(5);
 //		obj.InsertNode(25);
@@ -50,7 +58,7 @@ public class Algorithms {
 //		Solution solution=new Solution();
 //	      System.out.println(solution.findMedianSortedArrays(A,B));
 //	
-	l1.insert(3);
+	/*l1.insert(3);
 	l1.insert(5);
 	l1.insert(8);
 	l1.insert(9);
@@ -60,7 +68,7 @@ public class Algorithms {
 	l2.insert(4);
 	
 	l1.display();
-	l2.display();
+	l2.display();*/
 //
 //	
 //	System.out.println();
@@ -71,10 +79,10 @@ public class Algorithms {
 //	l1.display();
 	
 	
-	MergeSort merge=new MergeSort();
+	/*MergeSort merge=new MergeSort();
 	
 	int [] a= merge.mergeSort();
-	merge.display(a);
+	merge.display(a);*/
 		
 		
 //   LinkNode l3= l1.mergeLists(l1.First, l2.First);
