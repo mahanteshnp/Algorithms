@@ -1,4 +1,6 @@
 
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -6,6 +8,8 @@ import java.util.Stack;
 public class Tree {
 	
 	TreeNode root=null;
+	int level=0;
+	boolean levelNodeVisitedFlag[]= new boolean[256];
 	
 	public Tree()
 	{
@@ -315,5 +319,141 @@ public class Tree {
     	queue.remove();
     }
 	}
+	
+	public ArrayList<Integer> rightSideView(TreeNode root) {
+	    ArrayList<Integer> list = new ArrayList<Integer>();
 	 
+	    if(root == null) return list;
+	 
+	    Queue<TreeNode> queue = new LinkedList<TreeNode>();
+	    queue.add(root);
+	 
+	    while(!queue.isEmpty()){
+	     
+	        int size = queue.size();
+	 
+	        for(int i=0; i<size; i++){
+	            TreeNode top = queue.remove();
+	 
+	         
+	            if(i==0){
+	                list.add(top.val);
+	            }
+	           
+	            if(top.right != null){
+	                queue.add(top.right);
+	            }
+	           
+	            if(top.left != null){
+	                queue.add(top.left);
+	            }
+	        }
+	    }
+	 
+	    return list;
+	}
+	 
+	
+	public ArrayList<Integer>  leftView(TreeNode root)
+	{
+		ArrayList<Integer> list= new ArrayList<Integer>();
+		
+		Queue<TreeNode> queue= new LinkedList<TreeNode>();
+		
+		queue.add(root);
+		
+		while(!queue.isEmpty())
+		{
+			
+			int size= queue.size();
+			
+			for(int i=0; i<size ; i++)
+			{
+				TreeNode topNode= queue.remove();
+				
+				if(i==0)
+				{
+					list.add(topNode.val);
+				}
+				
+				if(topNode.left!=null)
+				{
+					queue.add(topNode.left);
+				}
+				if(topNode.right!=null)
+				{
+					queue.add(topNode.right);
+				}
+				
+				
+			}
+		}
+		
+		return list;
+		
+	}
+	
+	public void leftViewTreeTraversal(TreeNode node){  
+        ++level;  
+        if(node==null)  
+             return;  
+        if(!levelNodeVisitedFlag[level]){  
+             levelNodeVisitedFlag[level] = true;  
+             System.out.println(node.val);  
+        }  
+        if(node.left!=null)  
+             leftViewTreeTraversal(node.left);  
+        if(node.right!=null)  
+             leftViewTreeTraversal(node.right);  
+        level--;  
+        return;  
+   }  
+	
+	
+	public ArrayList<ArrayList<Integer>> levelOrderBU(TreeNode node)
+	{
+		ArrayList<ArrayList<Integer>> lists = new ArrayList<ArrayList<Integer>>();
+		
+		
+		
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		
+		Stack<ArrayList<Integer>> stack = new Stack<ArrayList<Integer>>();
+		
+		queue.add(node);
+		
+		while(!queue.isEmpty())
+		{
+			int size= queue.size();
+			ArrayList<Integer> list = new ArrayList<Integer>();
+			for(int i=0; i<size; i++)
+			{
+				TreeNode top=queue.remove();
+				
+				list.add(top.val);
+				
+				if(top.left!=null)
+				{
+					queue.add(top.left);
+				}
+				
+				if(top.right!=null)
+				{
+					queue.add(top.right);
+				}
+			}
+			
+			stack.push(list);
+			
+			
+		}
+		
+		while (!stack.isEmpty())
+			
+		{
+			lists.add(stack.pop());
+		}
+		
+		return lists;
+	}
 }

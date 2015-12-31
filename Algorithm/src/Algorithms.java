@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Algorithms {
 	
@@ -10,21 +11,31 @@ public class Algorithms {
 		Tree obj= new Tree();
 //		IntegerCoding code=new IntegerCoding();
 //		LocalExtrema localextrema= new LocalExtrema();
-//	ListOfNodes l1= new ListOfNodes();
+ListOfNodes l1= new ListOfNodes();
 //	ListOfNodes l2= new ListOfNodes();
-		obj.InsertNode(10);
-		obj.InsertNode(5);
-		obj.InsertNode(3);
-		obj.InsertNode(25);
-		obj.InsertNode(11); 
+//		obj.InsertNode(10);
+//		obj.InsertNode(5);
+//		obj.InsertNode(3);
+//		obj.InsertNode(25);
+//		obj.InsertNode(11); 
 		
-		obj.wideInsert(10);
-		obj.wideInsert(5);
-		obj.wideInsert(3);
-		obj.wideInsert(25);
-		obj.wideInsert(11);
+//		obj.wideInsert(10);
+//		obj.wideInsert(5);
+//		obj.wideInsert(3);
+//		obj.wideInsert(25);
+//		obj.wideInsert(11);
+//		
+//		obj.wideTraversal();
+//		
+//		obj.leftViewTreeTraversal(obj.root);
 		
-		obj.wideTraversal();
+		/*ArrayList<Integer> list = obj.leftView(obj.root);
+		
+		for(int x : list )
+		{
+			System.out.println(x);
+		}*/
+		
 //		
 //		/*obj.InsertNode(5);
 //		obj.InsertNode(25);
@@ -58,17 +69,19 @@ public class Algorithms {
 //		Solution solution=new Solution();
 //	      System.out.println(solution.findMedianSortedArrays(A,B));
 //	
-	/*l1.insert(3);
-	l1.insert(5);
-	l1.insert(8);
-	l1.insert(9);
+	l1.insert(1);
+//	l1.insert(5);
+//	l1.insert(8);
+//	l1.insert(9);
+	//l1.removeElements(l1.First, 2);
 	
-	
-	l2.insert(1);
-	l2.insert(4);
+//	l1.display();
+//	l1.reverseList(l1.First);
+	/*l2.insert(1);
+	l2.insert(4); */
 	
 	l1.display();
-	l2.display();*/
+	/*l2.display();*/
 //
 //	
 //	System.out.println();

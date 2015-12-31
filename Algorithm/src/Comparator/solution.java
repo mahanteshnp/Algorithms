@@ -19,6 +19,7 @@ public class solution {
 		  {
 			  s=br.readLine().trim();
 			  st=new StringTokenizer(s);
+			 
 			  Player[i]=new Player();
 			  Player[i].name=st.nextToken();
 			  Player[i].score=Integer.parseInt(st.nextToken());

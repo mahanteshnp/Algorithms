@@ -80,11 +80,60 @@ public class ListOfNodes {
 	        
 	}
 	
+//	static LinkNode head;
+//	
+//	public LinkNode reverseList(LinkNode node)
+//	{
+//		
+//		if(node==null)
+//			return null;
+//		
+//		LinkNode current= node;
+//		
+//	   LinkNode previous= reverseList(current.next);
+//		
+//		if(previous==null)
+//		{
+//			return head=current;
+//		}
+//		
+//		else 
+//			 previous.next=current;
+//		
+//		
+//		if(current==First)
+//		{   
+//			current.next=null;
+//			return head;
+//		}
+//		else 
+//		{
+//			return current;
+//		}
+//		
+//	}
+	
+	public LinkNode reverseList(LinkNode head) {
+	    if(head==null || head.next == null)
+	        return head;
+	 
+	    //get second node    
+	    LinkNode second = head.next;
+	    //set first's next to be null
+	    head.next = null;
+	 
+	    LinkNode rest = reverseList(second);
+
+	    second.next = head;
+	 
+	    return rest;
+	}
+	
 	
 	public void display()
 	{
 		//LinkNode head;
-		LinkNode list=First;
+		LinkNode list=removeElements(First, 3);
 		
 		while(list!=null)
 		{
@@ -94,4 +143,40 @@ public class ListOfNodes {
 		}
 		
 	}
+	
+	 public LinkNode removeElements(LinkNode head, int val) {
+	        
+	        
+	        LinkNode current=head;
+	        
+	        LinkNode previous=current;
+	        
+	        while(current!=null)
+	         {
+	            
+	              if(current.val == val)
+	            {
+	                if(current==head)
+	                {
+	                    head=head.next;
+	                }
+	             else  if(current.next!=null)
+	                {
+	                previous.next=current.next;
+	                current= current.next.next;
+	                }
+	             else 
+	             current=current.next;
+	            
+	            continue;
+	                
+	            }
+	            
+	             previous=current;
+	             current=current.next;
+	        }
+	        
+	        return head;
+	    }
+	
 }
