@@ -456,4 +456,37 @@ public class Tree {
 		
 		return lists;
 	}
+	
+	 
+	 TreeNode prev= null;
+	 public boolean isValidBST(TreeNode root) {
+		
+		 
+		 return isValid(root);
+		 
+	   }
+	 
+	 public boolean isValid(TreeNode root)
+	 {
+		 if(root==null)return true;
+		 
+		if( isValid(root.left))
+		{
+			if( prev!= null && root.val<=prev.val)
+				return false;
+			prev=root;
+			
+			return(isValid(root.right));
+			
+		}
+		
+		
+		 
+		 return false;
+		 
+		 
+		 
+		 
+		 
+	 }
 }
